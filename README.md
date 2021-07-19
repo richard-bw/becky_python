@@ -8,7 +8,7 @@ Required Tasks These are the required tasks for this project. You should aim to 
 2. Collect all of the sales from each month into a single list 
 3. Output the total sales across all months
 
-##Ideas for Extending the Project 
+## Ideas for Extending the Project 
 Here are a few ideas for extending the project beyond the required tasks. These ideas are just suggestions, feel free to come up with your own ideas and extend the program  however you want.
 
 Output a summary of the results to a spreadsheet 
