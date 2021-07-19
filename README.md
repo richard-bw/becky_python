@@ -1,8 +1,10 @@
-# Python Proj
+# Project Brief
 
-*Project Brief*: Spreadsheet Analysis In this project you'll use Python to do very basic data analysis on a spreadsheet. The standard project will use csv file that contains fake sales data. After completing the required tasks you are free to change the csv file that you use. The csv file for the standard project is called sales.csv and is included with your course materials. Please ask your instructor in case you are unable to find it. You will not need any additional knowledge beyond what is covered in this course to complete this project. 
+## Spreadsheet Analysis 
+In this project you'll use Python to do very basic data analysis on a spreadsheet. The standard project will use csv file that contains fake sales data. After completing the required tasks you are free to change the csv file that you use. The csv file for the standard project is called sales.csv and is included with your course materials. Please ask your instructor in case you are unable to find it. You will not need any additional knowledge beyond what is covered in this course to complete this project. 
 
-Required Tasks These are the required tasks for this project. You should aim to complete these tasks before adding your own ideas to the project. 
+### Required Tasks 
+These are the required tasks for this project. You should aim to complete these tasks before adding your own ideas to the project. 
 
 1. Read the data from the spreadsheet 
 2. Collect all of the sales from each month into a single list 
