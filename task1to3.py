@@ -9,7 +9,7 @@ def get_spreadsheet_data(spreadsheet_file):
         spreadsheet = csv.DictReader(csv_file)
         for row in spreadsheet:
             spreadsheet_data.append(dict(row))
-            print(dict(row))
+            #print(dict(row))
     return spreadsheet_data
 
 
