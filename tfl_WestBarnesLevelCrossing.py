@@ -3,20 +3,22 @@
 #  auth: rbw
 #  date: 20210720
 #  desc: 
+#  Bus stops in 5000m radius
+# https://api.tfl.gov.uk/StopPoint/?lat=51.396163&lon=-0.2393173&stopTypes=NaptanPublicBusCoachTram&radius=5000
 #
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 import requests
 from datetime import datetime, timedelta
 
 STATIONNAME     =   'West Barnes Level Crossing'
-STOPPOINT_ID    =   '490014399N'
-
-ARRIVALS_URL= f"https://api.tfl.gov.uk/StopPoint/{STOPPOINT_ID}/Arrivals"
-arrivals = requests.get(ARRIVALS_URL).json()
+                    #  "Stop E"    "Stop P"
+STOPPOINT_IDS   =   ['490014399N', '490014399S'] 
 
 print(f"Arrival times at {STATIONNAME} (time now: {datetime.now().strftime('%H:%M')})")
-for arrival in sorted(arrivals, key=lambda k: k['timeToStation']):
-    print (f"{arrival['lineName']} to {arrival['destinationName']} - due: {(datetime.now() + timedelta(seconds=arrival['timeToStation'])).strftime('%H:%M')}")
+for stopPoint in STOPPOINT_IDS:
+    arrivals = requests.get(f"https://api.tfl.gov.uk/StopPoint/{stopPoint}/Arrivals").json()
+    for arrival in sorted(arrivals, key=lambda k: k['timeToStation']):
+        print (f"{arrival['lineName']} to {arrival['destinationName']:30} - due: {(datetime.now() + timedelta(seconds=arrival['timeToStation'])).strftime('%H:%M')}")
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 #//EOF
