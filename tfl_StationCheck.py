@@ -12,10 +12,18 @@ from datetime import datetime, timedelta
 STATION_URL="https://tfl.gov.uk/tfl/syndication/feeds/stations.kml"
 NS="{http://www.opengis.net/kml/2.2}"
 
+word = "mackerel"
 
 for place in ElementTree.fromstring(requests.get(f"{STATION_URL}").content).findall(f"{NS}Document/{NS}Placemark"):
-    print(place.find(f"{NS}name").text.strip())
-
+    station_name = place.find(f"{NS}name").text.replace("Station", "").strip()
+    match = False
+    for cw in word:
+        if match: break
+        for cs in station_name:
+            if (cw==cs): 
+                match = True
+                break
+    if (not match ): print(station_name) 
 
 
 #- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
